@@ -31,6 +31,8 @@ function fontello () {
         throw new PluginError(PLUGIN_NAME, "No session at Fontello for zip archive");
       }
 
+      $.log("Fontello URL:", HOST + "/" + file.toString());
+
       var zipFile;
       zipFile = needle.get(HOST + "/" + file.toString() + "/get", {open_timeout: 0}, function(error) {
         if (error) {
